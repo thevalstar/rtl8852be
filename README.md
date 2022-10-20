@@ -39,7 +39,7 @@ bc
 
 ## Build(for kernel < 5.18)
 ```
-#Turn off your Security Boot in BIOS
+#Turn off Secure Boot in BIOS
 
 git clone https://github.com/HRex39/rtl8852be.git
 cd rtl8852be
@@ -50,7 +50,7 @@ sudo modprobe 8852be
 
 ## Build(for kernel >= 5.18)
 ```
-#Turn off your Security Boot in BIOS
+#Turn off Secure Boot in BIOS
 
 git clone https://github.com/HRex39/rtl8852be.git -b dev
 cd rtl8852be
@@ -59,19 +59,9 @@ sudo make install
 sudo modprobe 8852be
 ```
 
-## WHAT IS LINUX?
+## For DKMS support (i.e. no need to rebuild and modprobe again after updating the kernel)
 ```
-WHAT IS LINUX?
-
-  Linux is a clone of the operating system Unix, written from scratch by
-  Linus Torvalds with assistance from a loosely-knit team of hackers across
-  the Net. It aims towards POSIX and Single UNIX Specification compliance.
-
-  It has all the features you would expect in a modern fully-fledged Unix,
-  including true multitasking, virtual memory, shared libraries, demand
-  loading, shared copy-on-write executables, proper memory management,
-  and multistack networking including IPv4 and IPv6.
-
-  It is distributed under the GNU General Public License - see the
-  accompanying COPYING file for more details. 
+sudo dkms add -m rtl8852be -v r28.28daf8c
+sudo dkms build -m rtl8852be -v r28.28daf8c
+sudo dkms install -m rtl8852be -v r28.28daf8c
 ```
