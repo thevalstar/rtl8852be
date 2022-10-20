@@ -21,6 +21,7 @@ The default compilation option is i386_PC For Linux, you can also change the com
 build-essential 
 linux-headers
 bc
+dkms
 ```
 ## Prerequisites (for Fedora)
 ```
@@ -32,6 +33,7 @@ cmake
 gcc
 gcc-c++
 bc
+dkms
 ```
 
 
